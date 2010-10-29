@@ -1,0 +1,3 @@
+include dontcheckmein/config/deployment.ini_tmpl
+recursive-include dontcheckmein/public *
+recursive-include dontcheckmein/templates *
