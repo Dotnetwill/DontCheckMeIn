@@ -3,7 +3,7 @@ from sqlalchemy.types import Integer, Unicode, DateTime
 
 from dontcheckmein.model.meta import Base
 
-class IgnoreFile:
+class IgnoreFile(Base):
     __tablename__ = "ignorefile"
 
     id = Column(Integer, primary_key=True)

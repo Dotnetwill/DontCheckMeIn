@@ -1,0 +1,11 @@
+<html>
+  <head>
+  </head>
+  <body>
+    ${h.form(url(controller='ignorefile',action='add_processing'))}
+      <label>Your name: ${h.text('submitter')}</label> <br />
+      <label>Content: ${h.textarea('content')}</label> <br />
+      ${h.submit('submit','submit')} <br />
+    ${h.end_form()}
+  </body>
+</html>

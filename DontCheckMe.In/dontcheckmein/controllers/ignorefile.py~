@@ -1,12 +1,9 @@
 import logging
 import formencode
-import datetime
-
 from pylons import request, response, session, tmpl_context as c, url
 from pylons.controllers.util import abort, redirect
 from pylons.decorators import validate
 from dontcheckmein.lib.base import BaseController, render
-from dontcheckmein import model
 
 log = logging.getLogger(__name__)
 
@@ -20,27 +17,23 @@ class IgnorefileForm(formencode.Schema):
 class IgnorefileController(BaseController):
 
     def index(self):
+        # Return a rendered template
+        #return render('/ignorefile.mako')
+        # or, return a string
         return 'Hello World'
         
     def Add(self):
         """ Displays the standard form"""
         return render('/ignorefile/add.html')
 
-    @validate(IgnorefileForm(), form='Add')
+    @validate(IgnorefileForm(), )
     def Add_processing(self):
-        if request.method == 'POST':
-            new_ignore = model.objects.IgnoreFile()
-            new_ignore.content = self.form_result['content']
-            new_ignore.submitted_by = self.form_result['submitter']
-            new_ignore.submitted_date = datetime.datetime.now()
-            
-            model.Session.add(new_ignore)
-            model.Session.commit()
-            
-            redirect("/Ignorefile/Success")
+	if request.method = POST:
+	  form_schema = IgnorefileForm()
+	  form_result = form_schema.to_python(dict(request.params))
+  
+	  
 
-    def Success(self):
-        return 'did it bitches'
 
     def Search(self):
-        pass
+      pass
