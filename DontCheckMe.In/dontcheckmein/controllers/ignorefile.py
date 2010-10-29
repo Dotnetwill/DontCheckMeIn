@@ -14,3 +14,14 @@ class IgnorefileController(BaseController):
         #return render('/ignorefile.mako')
         # or, return a string
         return 'Hello World'
+        
+    def Add(self):
+        """ Displays the standard form"""
+        return render('/ignorefile/add.html')
+
+    def Add_processing(self):
+	return "processed it bitch tits"
+
+
+    def Search(self):
+      pass
