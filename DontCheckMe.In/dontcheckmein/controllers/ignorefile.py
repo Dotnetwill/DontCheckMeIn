@@ -20,8 +20,9 @@ class IgnorefileForm(formencode.Schema):
 class IgnorefileController(BaseController):
 
     def index(self):
-        return 'Hello World'
-        
+        c.ignore_list=model.Session.Query(model.objects.Ignorefile).order_by(model.objects.Ignorefile.submitted_date)[0:5]
+        return render('/ignorefile/latest.html')
+    
     def Add(self):
         """ Displays the standard form"""
         return render('/ignorefile/add.html')
