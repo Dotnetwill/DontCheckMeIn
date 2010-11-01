@@ -1,0 +1,68 @@
+.header{
+
+	right: 0px;
+
+	left: 0px;
+
+	position: absolute;
+
+	top: 0px;
+
+	margin: 0px;
+
+	padding: 0px;
+
+	border-style: none;
+
+	min-height: 100px;
+
+	height: auto;
+
+	width: auto;
+
+	background-image: url(header_background.png);
+
+	background-repeat: repeat-x;
+
+	background-color: white;
+
+}
+
+.navlinks
+{
+float: right;
+top: 10px;
+font-size: small;
+background-repeat: repeat-x;
+padding:0;
+margin:0;
+color: black;
+font-family: helvetica, arial, sans-serif;
+white-space:nowrap;
+list-style-type:none;
+
+}
+
+.navlinks li 
+{
+top: 10px;
+display:inline;
+float:left;
+margin-right:4px;
+position:relative;
+}
+
+.aboutbox 
+{
+	padding: 0.5em;
+	color: white;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	line-height: 1.2em;
+	background-color: #281e64;
+	height: 50px;
+	min-width: 70%;
+	width: 70%;
+	left: 15%;
+	top: 65px;
+	position: relative;
+}
