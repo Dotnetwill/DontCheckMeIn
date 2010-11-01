@@ -1,0 +1,198 @@
+<mockup version="1.0" skin="sketch" measuredW="903" measuredH="548" mockupW="874" mockupH="529">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="19" y="9" w="874" h="529" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Don%27t%20Check%20Me%20In%20-%20Home%0Ahttp%3A//dontcheckme.in</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="33" y="87" w="56" h="48" measuredW="77" measuredH="79" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="95" y="106" w="-1" h="-1" measuredW="157" measuredH="29" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Don%27t%20Check%20Me%20In</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="635" y="108" w="-1" h="-1" measuredW="49" measuredH="23" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Explore</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Link" x="684" y="108" w="-1" h="-1" measuredW="46" measuredH="23" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::TextInput" x="745" y="104" w="140" h="-1" measuredW="54" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Search</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Canvas" x="21" y="81" w="871" h="69" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <color>8554646</color>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Canvas" x="95" y="137" w="741" h="70" measuredW="100" measuredH="70" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>8554646</color>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="128" y="147" w="-1" h="-1" measuredW="227" measuredH="23" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>What%20is%20this%20site%20all%20about.%09%09</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="94" y="221" w="-1" h="-1" measuredW="50" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Latest</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::ComboBox" x="740" y="220" w="96" h="-1" measuredW="71" measuredH="50" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Latest%0AMost%20Viewed</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::HRule" x="149" y="232" w="587" h="-1" measuredW="100" measuredH="5" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="25" controlTypeID="__group__" x="150" y="242" w="-1" h="-1" measuredW="586" measuredH="75" zOrder="12" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="16" controlTypeID="com.balsamiq.mockups::Link" x="10" y="6" w="-1" h="-1" measuredW="170" measuredH="23" zOrder="1" locked="false" isInGroup="25">
+          <controlProperties>
+            <text>Git%20for%20pylons%20and%20kdevelop</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="10" y="28" w="336" h="23" measuredW="336" measuredH="23" zOrder="2" locked="false" isInGroup="25">
+          <controlProperties>
+            <text>GIT%20ignore%20file%20when%20working%20with%20Pylons%20and%20KDevelop</text>
+          </controlProperties>
+        </control>
+        <control controlID="22" controlTypeID="__group__" x="46" y="51" w="180" h="24" measuredW="180" measuredH="24" zOrder="3" locked="false" isInGroup="25">
+          <groupChildrenDescriptors>
+            <control controlID="18" controlTypeID="com.balsamiq.mockups::Link" x="0" y="0" w="-1" h="-1" measuredW="23" measuredH="23" zOrder="0" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Git</text>
+              </controlProperties>
+            </control>
+            <control controlID="19" controlTypeID="com.balsamiq.mockups::Link" x="28" y="0" w="-1" h="-1" measuredW="46" measuredH="23" zOrder="1" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Python</text>
+              </controlProperties>
+            </control>
+            <control controlID="20" controlTypeID="com.balsamiq.mockups::Link" x="76" y="1" w="-1" h="-1" measuredW="43" measuredH="23" zOrder="3" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Pylons</text>
+              </controlProperties>
+            </control>
+            <control controlID="21" controlTypeID="com.balsamiq.mockups::Link" x="121" y="1" w="-1" h="-1" measuredW="59" measuredH="23" zOrder="2" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>KDevelop</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::Label" x="10" y="51" w="35" h="23" measuredW="35" measuredH="23" zOrder="4" locked="false" isInGroup="25">
+          <controlProperties>
+            <color>8554646</color>
+            <text>tags%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="24" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="586" h="75" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="25"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="26" controlTypeID="__group__" x="150" y="324" w="-1" h="-1" measuredW="586" measuredH="75" zOrder="13" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="16" controlTypeID="com.balsamiq.mockups::Link" x="10" y="6" w="-1" h="-1" measuredW="170" measuredH="23" zOrder="1" locked="false" isInGroup="25">
+          <controlProperties>
+            <text>Git%20for%20pylons%20and%20kdevelop</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="10" y="28" w="336" h="23" measuredW="336" measuredH="23" zOrder="2" locked="false" isInGroup="25">
+          <controlProperties>
+            <text>GIT%20ignore%20file%20when%20working%20with%20Pylons%20and%20KDevelop</text>
+          </controlProperties>
+        </control>
+        <control controlID="22" controlTypeID="__group__" x="46" y="51" w="180" h="24" measuredW="180" measuredH="24" zOrder="3" locked="false" isInGroup="25">
+          <groupChildrenDescriptors>
+            <control controlID="18" controlTypeID="com.balsamiq.mockups::Link" x="0" y="0" w="-1" h="-1" measuredW="23" measuredH="23" zOrder="0" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Git</text>
+              </controlProperties>
+            </control>
+            <control controlID="19" controlTypeID="com.balsamiq.mockups::Link" x="28" y="0" w="-1" h="-1" measuredW="46" measuredH="23" zOrder="1" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Python</text>
+              </controlProperties>
+            </control>
+            <control controlID="20" controlTypeID="com.balsamiq.mockups::Link" x="76" y="1" w="-1" h="-1" measuredW="43" measuredH="23" zOrder="3" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Pylons</text>
+              </controlProperties>
+            </control>
+            <control controlID="21" controlTypeID="com.balsamiq.mockups::Link" x="121" y="1" w="-1" h="-1" measuredW="59" measuredH="23" zOrder="2" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>KDevelop</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::Label" x="10" y="51" w="35" h="23" measuredW="35" measuredH="23" zOrder="4" locked="false" isInGroup="25">
+          <controlProperties>
+            <color>8554646</color>
+            <text>tags%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="24" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="586" h="75" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="25"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="27" controlTypeID="__group__" x="150" y="406" w="-1" h="-1" measuredW="586" measuredH="75" zOrder="14" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="16" controlTypeID="com.balsamiq.mockups::Link" x="10" y="6" w="-1" h="-1" measuredW="170" measuredH="23" zOrder="1" locked="false" isInGroup="25">
+          <controlProperties>
+            <text>Git%20for%20pylons%20and%20kdevelop</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="10" y="28" w="336" h="23" measuredW="336" measuredH="23" zOrder="2" locked="false" isInGroup="25">
+          <controlProperties>
+            <text>GIT%20ignore%20file%20when%20working%20with%20Pylons%20and%20KDevelop</text>
+          </controlProperties>
+        </control>
+        <control controlID="22" controlTypeID="__group__" x="46" y="51" w="180" h="24" measuredW="180" measuredH="24" zOrder="3" locked="false" isInGroup="25">
+          <groupChildrenDescriptors>
+            <control controlID="18" controlTypeID="com.balsamiq.mockups::Link" x="0" y="0" w="-1" h="-1" measuredW="23" measuredH="23" zOrder="0" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Git</text>
+              </controlProperties>
+            </control>
+            <control controlID="19" controlTypeID="com.balsamiq.mockups::Link" x="28" y="0" w="-1" h="-1" measuredW="46" measuredH="23" zOrder="1" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Python</text>
+              </controlProperties>
+            </control>
+            <control controlID="20" controlTypeID="com.balsamiq.mockups::Link" x="76" y="1" w="-1" h="-1" measuredW="43" measuredH="23" zOrder="3" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>Pylons</text>
+              </controlProperties>
+            </control>
+            <control controlID="21" controlTypeID="com.balsamiq.mockups::Link" x="121" y="1" w="-1" h="-1" measuredW="59" measuredH="23" zOrder="2" locked="false" isInGroup="22">
+              <controlProperties>
+                <text>KDevelop</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::Label" x="10" y="51" w="35" h="23" measuredW="35" measuredH="23" zOrder="4" locked="false" isInGroup="25">
+          <controlProperties>
+            <color>8554646</color>
+            <text>tags%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="24" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="586" h="75" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="25"/>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
