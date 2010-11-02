@@ -1,6 +1,6 @@
 .header{
 
-	width: 100%;
+	padding: 10px;
 
 	min-width: 850px;
 
@@ -14,8 +14,6 @@
 
 	margin: 0px;
 
-	padding: 10px;
-
 	border-style: none;
 
     background:transparent url(bg.png) repeat-x scroll 0 0;
@@ -24,12 +22,13 @@
 
 .navlinks
 {
+right: 5px;
+position: absolute;
 margin: 0px;
 float: right;
 top: 10px;
 font-size: small;
 background-repeat: repeat-x;
-padding:0;
 color: black;
 font-family: "Lucida Grande","Lucida Sans","Lucida Sans Unicode",Verdana,sans-serif;
 white-space:nowrap;
@@ -48,6 +47,7 @@ position:relative;
 
 .aboutbox 
 {
+	clear: both;
 	padding-right: 10%;
 	padding-left: 10%;
 	right: 0px;
@@ -65,4 +65,12 @@ position:relative;
 
 	margin: 15px;
 
+}
+
+.content
+{
+	padding-right: 10%;
+	padding-left: 10%;
+	position: absolute;
+	clear: both;
 }
