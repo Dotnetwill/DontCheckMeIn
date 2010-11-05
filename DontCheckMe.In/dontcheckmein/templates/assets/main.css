@@ -52,7 +52,13 @@ table {
 }
 
 
-.header{
+h2
+{
+    font-size: 130%;
+	vertical-align: baseline;
+	background: transparent;
+
+}.header{
 
 	padding: 10px;
 
@@ -117,9 +123,49 @@ position:relative;
 
 .content
 {
+	padding-top: 10px;
 	padding-right: 10%;
 	padding-left: 10%;
 	position: relative;
 	clear: both;
 }
+
+.content .view-options
+{
+	top: -35px;
+	clear: both;
+	position: relative;
+	float: right;
+}
+
+.ignore-result
+{
+	padding-bottom: 8px;
+	line-height: 1.2em;
+	border-top-width: 1px;
+	border-top-color: #9b9b9b;
+	border-top-style: outset;
+	padding-top: 8px;
+}
+
+a.tag
+{
+	color: #6e6e6e;
+}
+
+a.tag:hover
+{
+	color: #bdbdbd;
+}
+
+.ignore-desc
+{
+	font-size: 85%;
+	padding-left: 4px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-top: 2px;
+	line-height: 1.2em;
+}
+
 
