@@ -16,4 +16,11 @@ class IgnoreFile(Base):
     
     def __str__(self):
       return title
-	
+
+class Tag(Base):
+    __tablename__ = "tags"
+    
+    id = Column(Integer, primary_key=True)
+    tag = Column(Unicode(130))
+    desc = Column(Unicode)
+

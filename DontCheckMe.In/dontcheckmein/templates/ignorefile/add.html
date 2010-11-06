@@ -2,11 +2,13 @@
 <%inherit file="/base.html" />
 
 <div class="content">
+    <h2>Add Ignore File</h2>
     ${h.form(url(controller='ignorefile',action='Add_processing'))}
-      <label>Your name: ${h.text('submitter', value='anon', maxlength=100)}</label> <br />
-      <label>Title: ${h.text('title', maxlength=135)}</label> <br />
-      <label>Description: ${h.text('desc')}</label> <br />
-      <label>Content: ${h.textarea('content')}</label> <br />
-      ${h.submit('submit','submit')} <br />
+      <label for="title">Title</label><br />  ${h.text('title', maxlength=135, class_='form-textbox')}</label> <br />
+      <label for="desc">Description</label><br /> ${h.textarea('desc', row=2, class_='desc-enter')}</label> <br />
+      <label for="tags">Tags</label><br />  ${h.text('tags', class_='form-textbox')}</label> <br />
+      <label for="content">Content</label><br /> ${h.textarea('content', rows=20, class_='ignore-enter')}</label> <br />
+      <label for="submitter" class="l-label">Your name</label> <label for="niceurl" class="r-label">Nice url</label><br />  ${h.text('submitter', value='anon', class_='form-l-textbox', maxlength=100)} ${h.text('niceurl', class_='form-r-textbox', maxlength=100)}<br />
+      ${h.submit('submit','submit', class_='submit-button')} <br />
     ${h.end_form()}
 </div>

@@ -169,4 +169,67 @@ a.tag:hover
 	line-height: 1.2em;
 }
 
+.content  .form-textbox
+{
+	border-width: 2px;
+	border-style: inset;
+	width: 100%;
+}
+
+.content form
+{
+	padding-right: 10%;
+	padding-left: 10%;
+}
+
+.content form textarea
+{
+	border-style: inset;
+	border-width: 2px;
+	width: 100%;
+}
+
+.content form label
+{
+	line-height: 1.2em;
+	font-weight: bold;
+}
+
+.content form .submit-button
+{
+	padding-top: 2px;
+	padding-right: 0px;
+	clear: both;
+	float: right;
+	font-size: 110%;
+}
+
+.content form .form-l-textbox
+{
+	left: 0px;
+	padding: 0px;
+	width: 49%;
+	border-style: inset;
+	border-width: 2px;
+}
+
+.content form .form-r-textbox
+{
+	left: 51%;
+	padding: 0px;
+	clear: both;
+	float: right;
+	width: 49%;
+	border-style: inset;
+	border-width: 2px;
+}
+
+.content form .r-label
+{
+	width: 50%;
+	clear: both;
+	float: right;
+	right: 51%;
+}
+
 
