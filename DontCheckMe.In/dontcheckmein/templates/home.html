@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+<%inherit file="/base.html" />
+
+<div class="aboutbox"><h2>About us</h2><p>Have you ever went to check a new project in version control and got a load files checked in
+that should never have been?  Struggled to come up with a complete list of files types to ignore for your project type?</p><br /><p>Well this could be the site for you, it is a collection of ignore files for various version control and technologies.  If yours is not listed then submit it when you find one and help the next person.</p>
+</div>
+    <div class="content">
+        <div class="title"><h2>Latest</h2> <select class="view-options">
+                                                <option>Latest</option>
+                                                <option>Most Popular</option>
+                                           </select> 
+        </div>
+% for item in c.ignore_list:
+        <div class="ignore-result"><p class="ignore-name"><a href="#">${item.title}</a></p>
+                <p class="ignore-desc">${item.desc}</p>
+                <p><a href="#" class="tag">tag</a> <a href="#" class="tag">tag</a> <a href="#" class="tag">tag</a></p>
+        </div>
+% else:
+<div class="ignore-result">
+    <h2>Sorry, we're empty at the moment!</h2>
+    </div>
+% endfor
+</div>

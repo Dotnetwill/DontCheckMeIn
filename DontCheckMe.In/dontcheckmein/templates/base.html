@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        ${h.stylesheet_link('/main.css')}
+        
+        <title>DontCheckMe.In</title>
+    </head>
+    <body>
+        <div class="header">
+            <img src="/logo.png" class="logo" />
+            <ul class="navlinks">
+                <li><a href="#">Explore</a></li>
+                <li><a href="${url(controller='ignorefile', action='Add')}">Submit</a></li>
+                <li><form name="search" method="post" action="/search">
+                        <input type="text" name="term" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+        ${self.body()}
+    </body>
+</html> 
+
