@@ -12,6 +12,7 @@ class IgnoreFile(Base):
     title = Column(Unicode(130))
     desc = Column(Unicode)
     content = Column(Unicode)
+    nice_url = Column(Unicode(25))
     
     def __str__(self):
       return title

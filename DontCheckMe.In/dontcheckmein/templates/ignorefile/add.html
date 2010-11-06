@@ -1,11 +1,12 @@
-<html>
-  <head>
-  </head>
-  <body>
+# -*- coding: utf-8 -*-
+<%inherit file="/base.html" />
+
+<div class="content">
     ${h.form(url(controller='ignorefile',action='Add_processing'))}
-      <label>Your name: ${h.text('submitter')}</label> <br />
+      <label>Your name: ${h.text('submitter', value='anon', maxlength=100)}</label> <br />
+      <label>Title: ${h.text('title', maxlength=135)}</label> <br />
+      <label>Description: ${h.text('desc')}</label> <br />
       <label>Content: ${h.textarea('content')}</label> <br />
       ${h.submit('submit','submit')} <br />
     ${h.end_form()}
-  </body>
-</html>
+</div>

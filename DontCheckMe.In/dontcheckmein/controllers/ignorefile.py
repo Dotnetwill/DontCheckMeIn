@@ -16,6 +16,9 @@ class IgnorefileForm(formencode.Schema):
 
     submitter = formencode.validators.NotEmpty()
     content = formencode.validators.NotEmpty()
+    title = formencode.validators.NotEmpty()
+    desc = formencode.validators.NotEmpty()
+    
 
 class IgnorefileController(BaseController):
 
@@ -31,7 +34,11 @@ class IgnorefileController(BaseController):
     def Add_processing(self):
         if request.method == 'POST':
             new_ignore = model.objects.IgnoreFile()
+            new_ignore.title = self.form_result['title']
             new_ignore.content = self.form_result['content']
+            new_ignore.desc = self.form_result['desc']
+            new_ignore.nice_link = self.form_result['nice_link']
+            
             new_ignore.submitted_by = self.form_result['submitter']
             new_ignore.submitted_date = datetime.datetime.now()
             
