@@ -1,14 +1,12 @@
-from sqlalchemy import Column
+from sqlalchemy import Column, Table, ForeignKey
 from sqlalchemy.types import Integer, Unicode, DateTime
+from sqlalchemy.orm import relation, backref
 
 from dontcheckmein.model.meta import Base
 
-class IgnoreFile_Tags(Base):
-    __tablename__ = "ignorefile_tags"
-    
-    ignorefile_id = Column(Integer)
-    tag_id = Column(Integer)
-    
+ignorefile_tags = Table('ignorefile_tags', Base.metadata,
+    Column('ignorefile_id', Integer, ForeignKey('ignorefile.id')),
+    Column('tag_id', Integer, ForeignKey('tags.id')))
 
 class IgnoreFile(Base):
     __tablename__ = "ignorefile"
@@ -22,7 +20,7 @@ class IgnoreFile(Base):
     nice_url = Column(Unicode(25))
 
     # many to many BlogPost<->Keyword
-    tags = relation('tags', secondary=IgnoreFile_Tags, backref='Tag')
+    tags = relation('tags', secondary=ignorefile_tags, backref='Tag')
     
     def __str__(self):
       return title
