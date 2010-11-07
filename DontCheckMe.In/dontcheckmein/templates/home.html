@@ -10,14 +10,19 @@ that should never have been?  Struggled to come up with a complete list of files
                                                 <option>Most Popular</option>
                                            </select> 
         </div>
+% if len(c.ignore_list) > 0:
 % for item in c.ignore_list:
         <div class="ignore-result"><p class="ignore-name"><a href="#">${item.title}</a></p>
                 <p class="ignore-desc">${item.desc}</p>
-                <p><a href="#" class="tag">tag</a> <a href="#" class="tag">tag</a> <a href="#" class="tag">tag</a></p>
+                <p>
+                % for tag in item.tags:
+                <a href="#" class="tag">${tag.tag}</a>
+                % endfor</p>
         </div>
+% endfor
 % else:
 <div class="ignore-result">
     <h2>Sorry, we're empty at the moment!</h2>
     </div>
-% endfor
 </div>
+% endif
