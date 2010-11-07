@@ -19,8 +19,8 @@ class IgnoreFile(Base):
     content = Column(Unicode)
     nice_url = Column(Unicode(25))
 
-    # many to many BlogPost<->Keyword
-    tags = relation('tags', secondary=ignorefile_tags, backref='Tag')
+    # many to many ignore file<->tag
+    tags = relation('Tag', secondary=ignorefile_tags, backref='tags')
     
     def __str__(self):
       return title
@@ -31,4 +31,12 @@ class Tag(Base):
     id = Column(Integer, primary_key=True)
     tag = Column(Unicode(130))
     desc = Column(Unicode)
+    
+    def __init__(self, tag):
+        self.tag = tag
+        self.desc = ''
+    
+    def __str__(self):
+        return self.tag
+
 

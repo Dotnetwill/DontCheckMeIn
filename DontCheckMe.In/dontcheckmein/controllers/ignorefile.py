@@ -7,6 +7,7 @@ from pylons.controllers.util import abort, redirect
 from pylons.decorators import validate
 from dontcheckmein.lib.base import BaseController, render
 from dontcheckmein import model
+from dontcheckmein.lib.taghelpers import GetTagListFromString
 
 log = logging.getLogger(__name__)
 
@@ -18,7 +19,8 @@ class IgnorefileForm(formencode.Schema):
     content = formencode.validators.NotEmpty()
     title = formencode.validators.NotEmpty()
     desc = formencode.validators.NotEmpty()
-    
+    niceurl = formencode.validators.String()
+    tags = formencode.validators.String()
 
 class IgnorefileController(BaseController):
 
@@ -37,9 +39,11 @@ class IgnorefileController(BaseController):
             new_ignore.title = self.form_result['title']
             new_ignore.content = self.form_result['content']
             new_ignore.desc = self.form_result['desc']
-            new_ignore.nice_link = self.form_result['nice_link']
             new_ignore.submitted_by = self.form_result['submitter']
+            new_ignore.nice_url = self.form_result['niceurl']
             new_ignore.submitted_date = datetime.datetime.now()
+            
+            new_ignore.tags = GetTagListFromString(self.form_result['tags'])
             
             model.Session.add(new_ignore)
             model.Session.commit()
