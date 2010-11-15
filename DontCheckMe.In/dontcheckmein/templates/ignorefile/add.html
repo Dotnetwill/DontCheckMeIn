@@ -3,7 +3,7 @@
 
 <div class="content">
     <h2>Add Ignore File</h2>
-    ${h.form(url(controller='ignorefile',action='Add_processing'))}
+    ${h.form(url(controller='ignorefile',action='add_processing'))}
       <label for="title">Title</label><br />  ${h.text('title', maxlength=135, class_='form-textbox')}</label> <br />
       <label for="desc">Description</label><br /> ${h.textarea('desc', row=2, class_='desc-enter')}</label> <br />
       <label for="tags">Tags</label><br />  ${h.text('tags', class_='form-textbox')}</label> <br />

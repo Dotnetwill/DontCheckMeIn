@@ -2,6 +2,7 @@ import logging
 import formencode
 import datetime
 
+from sqlalchemy.orm.exc import NoResultFound
 from pylons import request, response, session, tmpl_context as c, url
 from pylons.controllers.util import abort, redirect
 from pylons.decorators import validate
@@ -24,16 +25,12 @@ class IgnorefileForm(formencode.Schema):
 
 class IgnorefileController(BaseController):
 
-    def index(self):
-        c.ignore_list=model.Session.Query(model.objects.Ignorefile).order_by(model.objects.Ignorefile.submitted_date)[0:5]
-        return render('/ignorefile/latest.html')
-    
-    def Add(self):
+    def add(self):
         """ Displays the standard form"""
         return render('/ignorefile/add.html')
 
     @validate(IgnorefileForm(), form='Add')
-    def Add_processing(self):
+    def add_processing(self):
         if request.method == 'POST':
             new_ignore = model.objects.IgnoreFile()
             new_ignore.title = self.form_result['title']
@@ -50,8 +47,16 @@ class IgnorefileController(BaseController):
             
             redirect("/Ignorefile/Success")
 
-    def Success(self):
-        return 'did it bitches'
+    def view(self, id=None):
+        if id == None:
+            abort(404, 'ignore file not found')
+            
+        try:
+            c.ignore_file = model.Session.query(model.objects.IgnoreFile).filter(model.objects.IgnoreFile.id == id).order_by(model.objects.IgnoreFile.submitted_date).one()
+        
+            return render('/ignorefile/view.html')
 
-    def Search(self):
-        pass
+        except NoResultFound:
+            abort(404, 'Not found')
+
+        
