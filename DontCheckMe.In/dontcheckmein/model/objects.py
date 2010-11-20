@@ -32,11 +32,15 @@ class Tag(Base):
     tag = Column(Unicode(130))
     desc = Column(Unicode)
     
+    ignore_files = relation('IgnoreFile', secondary=ignorefile_tags, backref='ignorefile')
+    
     def __init__(self, tag):
         self.tag = tag
         self.desc = ''
     
     def __str__(self):
         return self.tag
+        
+    
 
 

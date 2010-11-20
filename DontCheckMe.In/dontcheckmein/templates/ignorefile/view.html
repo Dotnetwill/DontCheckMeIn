@@ -5,5 +5,7 @@
     <h2>${c.ignore_file.title}</h2>
     <p>${c.ignore_file.desc}</p>
     <textarea readonly="true" class="ignore-enter" rows=20>${c.ignore_file.content}</textarea>
-    <p><em>Tags: </em></p>
+    <p><em>Tags:    % for tag in item.tags:
+                <a href="${url(controller='search', action='tag', tag=tag)}" class="tag">${tag.tag}</a>
+                % endfor</p> </em></p>
 </div>

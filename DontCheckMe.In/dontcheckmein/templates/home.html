@@ -16,7 +16,7 @@ that should never have been?  Struggled to come up with a complete list of files
                 <p class="ignore-desc">${item.desc}</p>
                 <p>
                 % for tag in item.tags:
-                <a href="#" class="tag">${tag.tag}</a>
+                <a href="${url(controller='search', action='tag', tag=tag)}" class="tag">${tag.tag}</a>
                 % endfor</p>
         </div>
 % endfor
