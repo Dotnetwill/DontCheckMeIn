@@ -62,8 +62,7 @@ class IgnorefileController(BaseController):
         ignore_file = self._get_ignore_by_id(id)
         
         response.content_type = 'text/plain'
-        response.content_disposition = 'attachment; filename: ignorefile' 
-
+        response.content_disposition = 'attachment; filename=' + self._get_filename(ignore_file) + '.ignore'
         #response.filename = 'ignorefile'
                  
         return ignore_file.content 
@@ -74,3 +73,6 @@ class IgnorefileController(BaseController):
         except NoResultFound:
             abort(404, 'Not found')
             
+    def _get_filename(self, ignore_file):
+        return "_".join([tag.tag for tag in ignore_file.tags])
+    
