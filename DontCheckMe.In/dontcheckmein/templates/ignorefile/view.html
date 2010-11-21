@@ -5,14 +5,31 @@
     <h2>${c.ignore_file.title}</h2>
     <p>${c.ignore_file.desc}</p>
     <ul class="view-tools">
-      <li><a href=""><img src="/clipboard.png" alt="Copy to clipboard" /></a></li>
+      <li><div id="d_clip_button"><a href="#" onclick="return false;"><img src="/clipboard.png" alt="Copy to clipboard" /></a></div></li>
       <li><a href="${url(controller='ignorefile', action='download', id=c.ignore_file.id)}"><img src="/download.gif" alt="Download" /></a></li>
       <li><a href="#"><img src="/warning.png" alt="Flag" /></a></li>
     </ul>
-    <textarea readonly="true" class="ignore-enter" rows=20>${c.ignore_file.content}</textarea>
-   GetTagListFromString <br />
+    <textarea readonly="true" class="ignore-enter" id="file_content" rows=20>${c.ignore_file.content}</textarea>
+    <br />
     <p><em>Tags: </em> 
           % for tag in c.ignore_file.tags:
             <a href="${url(controller='search', action='tag', tag=tag)}" class="tag">${tag.tag}</a>
           % endfor </p>
+          
+          <script src="/zeroclipboard.js" type="text/javascript"></script>
+          
+           <script language="JavaScript">
+                        var clip = new ZeroClipboard.Client();
+                        
+                        clip.setText( '' ); // will be set later on mouseDown
+                        clip.setHandCursor( true );
+                        clip.setCSSEffects( true );
+                        
+                        clip.addEventListener( 'mouseDown', function(client) { 
+                                // set text to copy here
+                                clip.setText( $('textarea#file_content').val() );
+                        } );
+                        
+                        clip.glue( 'd_clip_button' );
+                </script>
 </div>

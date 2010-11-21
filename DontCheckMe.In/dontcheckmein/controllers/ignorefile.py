@@ -63,7 +63,6 @@ class IgnorefileController(BaseController):
         
         response.content_type = 'text/plain'
         response.content_disposition = 'attachment; filename=' + self._get_filename(ignore_file) + '.ignore'
-        #response.filename = 'ignorefile'
                  
         return ignore_file.content 
 
