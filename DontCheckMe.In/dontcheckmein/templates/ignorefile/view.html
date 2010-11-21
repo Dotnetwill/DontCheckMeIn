@@ -4,8 +4,15 @@
 <div class="content">
     <h2>${c.ignore_file.title}</h2>
     <p>${c.ignore_file.desc}</p>
+    <ul class="view-tools">
+      <li><a href=""><img src="/clipboard.png" alt="Copy to clipboard" /></a></li>
+      <li><a href="${url(controller='ignorefile', action='download', id=c.ignore_file.id)}"><img src="/download.gif" alt="Download" /></a></li>
+      <li><a href="#"><img src="/warning.png" alt="Flag" /></a></li>
+    </ul>
     <textarea readonly="true" class="ignore-enter" rows=20>${c.ignore_file.content}</textarea>
-    <p><em>Tags:    % for tag in item.tags:
-                <a href="${url(controller='search', action='tag', tag=tag)}" class="tag">${tag.tag}</a>
-                % endfor</p> </em></p>
+   GetTagListFromString <br />
+    <p><em>Tags: </em> 
+          % for tag in c.ignore_file.tags:
+            <a href="${url(controller='search', action='tag', tag=tag)}" class="tag">${tag.tag}</a>
+          % endfor </p>
 </div>

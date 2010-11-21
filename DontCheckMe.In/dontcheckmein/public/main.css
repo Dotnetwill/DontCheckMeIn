@@ -232,4 +232,25 @@ a.tag:hover
 	right: 51%;
 }
 
+.view-tools
+{
+position: relative;
+margin: 2px;
+float: right;
+font-size: small;
+background-repeat: repeat-x;
+color: black;
+font-family: "Lucida Grande","Lucida Sans","Lucida Sans Unicode",Verdana,sans-serif;
+white-space:nowrap;
+list-style-type:none;
 
+}
+
+.view-tools li 
+{
+  margin: 2px;
+  display:inline;
+  float:left;
+  position:relative;
+  top:35px;
+}

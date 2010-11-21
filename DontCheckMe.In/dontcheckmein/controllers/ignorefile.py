@@ -51,12 +51,26 @@ class IgnorefileController(BaseController):
         if id == None:
             abort(404, 'ignore file not found')
             
-        try:
-            c.ignore_file = model.Session.query(model.objects.IgnoreFile).filter(model.objects.IgnoreFile.id == id).order_by(model.objects.IgnoreFile.submitted_date).one()
+        c.ignore_file = self._get_ignore_by_id(id)
         
-            return render('/ignorefile/view.html')
+        return render('/ignorefile/view.html')
 
+    def download(self, id=None):
+        if id == None:
+            abort(404, 'Not found')
+        
+        ignore_file = self._get_ignore_by_id(id)
+        
+        response.content_type = 'text/plain'
+        response.content_disposition = 'attachment; filename: ignorefile' 
+
+        #response.filename = 'ignorefile'
+                 
+        return ignore_file.content 
+
+    def _get_ignore_by_id(self, id):
+        try:
+             return model.Session.query(model.objects.IgnoreFile).filter(model.objects.IgnoreFile.id == id).order_by(model.objects.IgnoreFile.submitted_date).one()
         except NoResultFound:
             abort(404, 'Not found')
-
-        
+            

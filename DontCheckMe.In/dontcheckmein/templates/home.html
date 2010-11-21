@@ -12,7 +12,7 @@ that should never have been?  Struggled to come up with a complete list of files
         </div>
 % if len(c.ignore_list) > 0:
 % for item in c.ignore_list:
-        <div class="ignore-result"><p class="ignore-name"><a href="#">${item.title}</a></p>
+        <div class="ignore-result"><p class="ignore-name"><a href="${url(controller='ignorefile', action='view', id=item.id)}">${item.title}</a></p>
                 <p class="ignore-desc">${item.desc}</p>
                 <p>
                 % for tag in item.tags:
