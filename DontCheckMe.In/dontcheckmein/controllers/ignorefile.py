@@ -47,7 +47,8 @@ class IgnorefileController(BaseController):
             new_ignore.submitted_by = self.form_result['submitter']
             new_ignore.nice_url = self.form_result['niceurl']
             new_ignore.submitted_date = datetime.datetime.now()
-            
+            new_ignore.views = 0
+            new_ingore.rating = 0
             new_ignore.tags = GetTagListFromString(self.form_result['tags'])
             
             model.Session.add(new_ignore)
@@ -61,6 +62,9 @@ class IgnorefileController(BaseController):
         
         try:
              c.ignore_file = model.Session.query(model.objects.IgnoreFile).filter(model.objects.IgnoreFile.nice_url == nice_url).one()
+             
+             c.ignore_file.views = c.ignore_file + 1
+             model.Session.commit()
         except NoResultFound:
             abory(404, 'Sorry not mapped to an ignore file')
             
@@ -71,6 +75,9 @@ class IgnorefileController(BaseController):
             abort(404, 'ignore file not found')
             
         c.ignore_file = self._get_ignore_by_id(id)
+        
+        c.ignore_file.views = c.ignore_file + 1
+        model.Session.commit()
         
         return render('/ignorefile/view.html')
 

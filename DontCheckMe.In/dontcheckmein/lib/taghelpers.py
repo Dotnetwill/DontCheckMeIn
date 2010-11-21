@@ -5,7 +5,7 @@ from dontcheckmein import model
 
 def GetTagListFromString(tag_string):
     taglist = []
-    for tag in tag_string.split(' '):
+    for tag in tag_string.replace(' ', ',').split(','):
         if tag == '':
             continue
             

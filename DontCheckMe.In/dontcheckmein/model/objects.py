@@ -18,7 +18,8 @@ class IgnoreFile(Base):
     desc = Column(Unicode)
     content = Column(Unicode)
     nice_url = Column(Unicode(25))
-
+    views = Column(Integer)
+    rating = Column(Integer)
     # many to many ignore file<->tag
     tags = relation('Tag', secondary=ignorefile_tags, backref='tags')
     
