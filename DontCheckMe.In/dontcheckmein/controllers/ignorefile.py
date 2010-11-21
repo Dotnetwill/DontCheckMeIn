@@ -11,6 +11,14 @@ from dontcheckmein import model
 from dontcheckmein.lib.taghelpers import GetTagListFromString
 
 log = logging.getLogger(__name__)
+class UniqueNiceUrl(formencode.validators.String):
+    def _to_python(self, value, c):
+        url_count = model.Session.query(model.objects.IgnoreFile.id).filter(model.objects.IgnoreFile.nice_url == value).count()
+        if url_count > 0:
+            raise formencode.validators.Invalid('Sorry %s is already taken' % \
+                                                value, value, c)
+                                                
+        return formencode.validators.String._to_python(self, value, c)
 
 class IgnorefileForm(formencode.Schema):
     allow_extra_fields = True
@@ -20,7 +28,7 @@ class IgnorefileForm(formencode.Schema):
     content = formencode.validators.NotEmpty()
     title = formencode.validators.NotEmpty()
     desc = formencode.validators.NotEmpty()
-    niceurl = formencode.validators.String()
+    niceurl = UniqueNiceUrl()
     tags = formencode.validators.String()
 
 class IgnorefileController(BaseController):
@@ -29,7 +37,7 @@ class IgnorefileController(BaseController):
         """ Displays the standard form"""
         return render('/ignorefile/add.html')
 
-    @validate(IgnorefileForm(), form='Add')
+    @validate(IgnorefileForm(), form='add')
     def add_processing(self):
         if request.method == 'POST':
             new_ignore = model.objects.IgnoreFile()
@@ -47,7 +55,7 @@ class IgnorefileController(BaseController):
             
             redirect("/Ignorefile/Success")
 
-    def view_by_niceurl(self, nice_url):
+    def view_by_niceurl(self, nice_url=None):
         if(nice_url == None):
             abort(404, 'Sorry not mapped to an ignore file')
         
