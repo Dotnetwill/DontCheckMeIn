@@ -47,6 +47,17 @@ class IgnorefileController(BaseController):
             
             redirect("/Ignorefile/Success")
 
+    def view_by_niceurl(self, nice_url):
+        if(nice_url == None):
+            abort(404, 'Sorry not mapped to an ignore file')
+        
+        try:
+             c.ignore_file = model.Session.query(model.objects.IgnoreFile).filter(model.objects.IgnoreFile.nice_url == nice_url).one()
+        except NoResultFound:
+            abory(404, 'Sorry not mapped to an ignore file')
+            
+        return render('/ignorefile/view.html')
+    
     def view(self, id=None):
         if id == None:
             abort(404, 'ignore file not found')
@@ -68,7 +79,7 @@ class IgnorefileController(BaseController):
 
     def _get_ignore_by_id(self, id):
         try:
-             return model.Session.query(model.objects.IgnoreFile).filter(model.objects.IgnoreFile.id == id).order_by(model.objects.IgnoreFile.submitted_date).one()
+             return model.Session.query(model.objects.IgnoreFile).filter(model.objects.IgnoreFile.id == id).one()
         except NoResultFound:
             abort(404, 'Not found')
             

@@ -21,6 +21,7 @@ def make_map(config):
     # CUSTOM ROUTES HERE
     map.connect('/', controller='index', action='index')
     map.connect('/search/tag/{tag}', controller='search', action='tag')
+    map.connect('/{nice_url}', controller='ignorefile', action='view_by_niceurl')
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')
 
