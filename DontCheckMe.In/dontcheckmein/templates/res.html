@@ -1,0 +1,9 @@
+% for item in c.ignore_list:
+        <div class="ignore-result"><p class="ignore-name"><a href="${url(controller='ignorefile', action='view', id=item.id)}">${item.title}</a></p>
+                <p class="ignore-desc">${item.desc}</p>
+                <p>
+                % for tag in item.tags:
+                <a href="${url(controller='search', action='tag', tag=tag)}" class="tag">${tag.tag}</a>
+                % endfor</p>
+        </div>
+% endfor

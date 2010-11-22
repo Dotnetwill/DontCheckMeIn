@@ -4,11 +4,33 @@
 <div class="content">
     <h2>Add Ignore File</h2>
     ${h.form(url(controller='ignorefile',action='add_processing'))}
-      <label for="title">Title</label><br />  ${h.text('title', maxlength=135, class_='form-textbox')}</label> <br />
-      <label for="desc">Description</label><br /> ${h.textarea('desc', row=2, class_='desc-enter')}</label> <br />
-      <label for="tags">Tags</label><br />  ${h.text('tags', class_='form-textbox')}</label> <br />
-      <label for="content">Content</label><br /> ${h.textarea('content', rows=20, class_='ignore-enter')}</label> <br />
-      <label for="submitter" class="l-label">Your name</label> <label for="niceurl" class="r-label">Nice url</label><br />  ${h.text('submitter', value='anon', class_='form-l-textbox', maxlength=100)} ${h.text('niceurl', class_='form-r-textbox', maxlength=100)}<br />
+      <label for="title">Title</label><br />  ${h.text('title', maxlength=135, class_='form-textbox')} <br />
+      <label for="desc">Description</label><br /> ${h.textarea('desc', row=2, class_='desc-enter')} <br />
+      <!--<label for="tags">Tags</label><br />  ${h.text('tags', class_='form-textbox')}<br />-->
+      <label for="tags">Tags</label><br />  <ul id='tags'></ul><br />
+      <label for="content">Content</label><br /> ${h.textarea('content', rows=20, class_='ignore-enter', id='tags')}<br />
+      <label for="submitter" class="l-label">Your name</label> 
+      <label for="niceurl" class="r-label">Nice url<br /></label>  ${h.text('submitter', value='anon', class_='form-l-textbox', maxlength=100)} ${h.text('niceurl', class_='form-r-textbox', maxlength=100)} <br />
       ${h.submit('submit','submit', class_='submit-button')} <br />
     ${h.end_form()}
+    
+    
+  <link href="/tagit/jquery.ui.autocomplete.custom.css" rel="stylesheet" type="text/css"  />
+
+  <script src="/tagit/jquery-ui-1.8.core-and-interactions.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/tagit/jquery-ui-1.8.autocomplete.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/tagit/tag-it.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+  $(document).ready(function(){
+    $("#tags").tagit({
+      availableTags: [
+      % for tag in c.tags:
+        "${tag.tag}",
+      % endfor
+     ]
+    });
+  });
+  </script>
+
 </div>

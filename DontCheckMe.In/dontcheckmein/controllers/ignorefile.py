@@ -35,6 +35,8 @@ class IgnorefileController(BaseController):
 
     def add(self):
         """ Displays the standard form"""
+        c.tags =  model.Session.query(model.objects.Tag).all()
+                             
         return render('/ignorefile/add.html')
 
     @validate(IgnorefileForm(), form='add')
@@ -48,7 +50,7 @@ class IgnorefileController(BaseController):
             new_ignore.nice_url = self.form_result['niceurl']
             new_ignore.submitted_date = datetime.datetime.now()
             new_ignore.views = 0
-            new_ingore.rating = 0
+            new_ignore.rating = 0
             new_ignore.tags = GetTagListFromString(self.form_result['tags'])
             
             model.Session.add(new_ignore)

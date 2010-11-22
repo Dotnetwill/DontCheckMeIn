@@ -14,8 +14,13 @@ class IndexController(BaseController):
         c.ignore_list = model.Session.query(model.objects.IgnoreFile).order_by(desc(model.objects.IgnoreFile.submitted_date))[0:5]
         
         return render('home.html')
-    
+
     def get_by_views(self):
-        c.ignore_list = model.Session.query(model.objects.IgnoreFile).order_by(model.objects.IgnoreFile.views)[0:5]
+        c.ignore_list = model.Session.query(model.objects.IgnoreFile).order_by(desc(model.objects.IgnoreFile.views))[0:5]
+        
+        return render('res.html')
+    
+    def get_by_latest(self):
+        c.ignore_list = model.Session.query(model.objects.IgnoreFile).order_by(desc(model.objects.IgnoreFile.submitted_date))[0:5]
         
         return render('res.html')

@@ -5,11 +5,12 @@
 that should never have been?  Struggled to come up with a complete list of files types to ignore for your project type?</p><br /><p>Well this could be the site for you, it is a collection of ignore files for various version control and technologies.  If yours is not listed then submit it when you find one and help the next person.</p>
 </div>
     <div class="content">
-        <div class="title"><h2>Latest</h2> <select class="view-options">
-                                                <option>Latest</option>
-                                                <option>Most Popular</option>
+        <div class="title"><h2>Latest</h2> <select id="view-options" class="view-options">
+                                                <option value="latest" selected="selected">Latest</option>
+                                                <option value="popular">Most Viewed</option>
                                            </select> 
         </div>
+        <div id="results">
 % if len(c.ignore_list) > 0:
 % for item in c.ignore_list:
         <div class="ignore-result"><p class="ignore-name"><a href="${url(controller='ignorefile', action='view', id=item.id)}">${item.title}</a></p>
@@ -21,8 +22,28 @@ that should never have been?  Struggled to come up with a complete list of files
         </div>
 % endfor
 % else:
-<div class="ignore-result">
-    <h2>Sorry, we're empty at the moment!</h2>
+    <div class="ignore-result">
+        <h2>Sorry, we're empty at the moment!</h2>
+        </div>
     </div>
-</div>
 % endif
+        </div>
+<script type="text/javascript"> 
+$(document).ready(function(){ 
+  $('#view-options').change(function() {
+      var selectedValue = $('#view-options').val();
+      var request = '';
+      if(selectedValue == 'popular')
+      {
+        request = '/index/get_by_views';
+      }
+      else
+      {
+        request = '/index/get_by_latest';
+      }
+      
+      $('#results').load(request);
+      
+    });
+});
+</script>
