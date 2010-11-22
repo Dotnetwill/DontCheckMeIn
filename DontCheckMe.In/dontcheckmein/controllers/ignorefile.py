@@ -8,7 +8,7 @@ from pylons.controllers.util import abort, redirect
 from pylons.decorators import validate
 from dontcheckmein.lib.base import BaseController, render
 from dontcheckmein import model
-from dontcheckmein.lib.taghelpers import GetTagListFromString
+from dontcheckmein.lib.taghelpers import GetTagList
 
 log = logging.getLogger(__name__)
 class UniqueNiceUrl(formencode.validators.String):
@@ -29,7 +29,7 @@ class IgnorefileForm(formencode.Schema):
     title = formencode.validators.NotEmpty()
     desc = formencode.validators.NotEmpty()
     niceurl = UniqueNiceUrl()
-    tags = formencode.validators.String()
+    tags = formencode.ForEach(formencode.validators.String())
 
 class IgnorefileController(BaseController):
 
@@ -51,12 +51,12 @@ class IgnorefileController(BaseController):
             new_ignore.submitted_date = datetime.datetime.now()
             new_ignore.views = 0
             new_ignore.rating = 0
-            new_ignore.tags = GetTagListFromString(self.form_result['tags'])
+            new_ignore.tags = GetTagList(self.form_result['tags'])
             
             model.Session.add(new_ignore)
             model.Session.commit()
-            
-            redirect("/Ignorefile/Success")
+          
+            redirect("/ignorefile/view/%d" % new_ignore.id)
 
     def view_by_niceurl(self, nice_url=None):
         if(nice_url == None):
@@ -78,7 +78,7 @@ class IgnorefileController(BaseController):
             
         c.ignore_file = self._get_ignore_by_id(id)
         
-        c.ignore_file.views = c.ignore_file + 1
+        c.ignore_file.views = c.ignore_file.views + 1
         model.Session.commit()
         
         return render('/ignorefile/view.html')

@@ -6,7 +6,6 @@
     ${h.form(url(controller='ignorefile',action='add_processing'))}
       <label for="title">Title</label><br />  ${h.text('title', maxlength=135, class_='form-textbox')} <br />
       <label for="desc">Description</label><br /> ${h.textarea('desc', row=2, class_='desc-enter')} <br />
-      <!--<label for="tags">Tags</label><br />  ${h.text('tags', class_='form-textbox')}<br />-->
       <label for="tags">Tags</label><br />  <ul id='tags'></ul><br />
       <label for="content">Content</label><br /> ${h.textarea('content', rows=20, class_='ignore-enter', id='tags')}<br />
       <label for="submitter" class="l-label">Your name</label> 
