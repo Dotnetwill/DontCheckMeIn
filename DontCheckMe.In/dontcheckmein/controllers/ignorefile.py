@@ -68,7 +68,7 @@ class IgnorefileController(BaseController):
              c.ignore_file.views = c.ignore_file + 1
              model.Session.commit()
         except NoResultFound:
-            abory(404, 'Sorry not mapped to an ignore file')
+            abort(404, 'Sorry not mapped to an ignore file')
             
         return render('/ignorefile/view.html')
     
