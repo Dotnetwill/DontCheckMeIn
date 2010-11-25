@@ -14,11 +14,11 @@ log = logging.getLogger(__name__)
 class SearchController(BaseController):
 
     def index(self):
-        # Return a rendered template
-        #return render('/search.mako')
-        # or, return a string
-        return 'Hello World'
-        
+        return render('search.html')
+    
+    def search(self, term):
+        pass
+    
     def tag(self, tag=None):
         if tag == None:
             abort(404, "oh tits")

@@ -12,7 +12,7 @@
         <div class="header">
             <a href="/"><img src="/logo.png" class="logo" /></a>
             <ul class="navlinks">
-                <li><a href="#">Explore</a></li>
+                <li><a href="${url(controller='tags')}">Explore by Tag</a></li>
                 <li><a href="${url(controller='ignorefile', action='add')}">Submit</a></li>
                 <li><form name="search" method="post" action="/search">
                         <input type="text" name="term" />
